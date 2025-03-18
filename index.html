@@ -13,21 +13,37 @@
             width: 1000px;
             max-width: calc(90% - 20px); 
             align: center;
-            border-width: 1px;
-            border-style: solid;
+            <!-- border-width: 1px; -->
+            <!-- border-style: solid; -->
         } 
         .top {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .top-text {
+            flex: 1;
+        }
+        .headshot {
+            width: 250px;
+        }
+
+        @media (max-width: 768px) {
+            .top {
+                flex-direction: column;
+            }
+            .top-text .headshot {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div id="main" class="container">
         <div class="top">
-            <div>
-                <h1>Martin Allen</h1>
+            <div class="top-text">
+                <h1 class="name">Martin Allen</h1>
                 <h4>
                     Software Engineer, <a href="https://theijf.org">
                         The Investigative Journalism Foundation</a>
@@ -42,35 +58,34 @@
                     <a href="https://linkedin.com/in/martin-allen-a7820a154">LinkedIn</a>
                 </p>
             </div>
-            <img src="/me.jpg" alt="Headshot" style="max-width:250px;">
+            <img src="/me.jpg" alt="Headshot" class="headshot">
         </div>
         <hr>
         <h3>Work</h3>
         <p>
             I am the IJF's primary backend engineer. I'm working on 
             <a href="https://theijf.org/open-by-default">Open by Default</a>,
-            Canada's largest ever trove of gov't documents. I built the system we 
+            Canada's largest ever trove of gov't documents; I built the system we 
             use to process the files we receive daily from more than 150 
             departments.
         </p>
         <p>
             I also built the system that powers our stores of structured data. 
-            It collates disparate data sources from each province and territory 
-            into clean, useful formats. Most recently, we published a 
+            Most recently, we published a 
             <a href="https://theijf.org/procurement">Procurement</a> database.
+        </p>
+        <p>
+            I assist or lead the fact-finding process for all our databases. The 
+            <a href="https://theijf.org/procurement-introduction">handbook</a> I wrote for
+            that Procurement project summarizes our work well.
         </p>
         <p>
             I work daily with Python, PostgreSQL, Docker/Linux, and AWS. I have
             special experience in web scraping (e.g. 
             <a href="https://lobbyist.oico.on.ca/Pages/Public/PublicSearch/">this piece of 
-            work</a>) and in data engineering. I know enough CSS to make this website.
+            work</a>) and in data engineering.
         </p>
-        <p>
-            I assist or lead the fact-finding process for all our databases. The 
-            <a href="https://theijf.org/procurement-introduction">handbook</a> I wrote for
-            our Procurement data summarizes our work well.
-        </p>
-        <h4>Journalism</h4>
+        <h4>Reporting</h4>
         <p>
                 I worked at <em>The Western Gazette</em>, Canada's largest student paper, 
                 full time for most my undergrad. After graduation I was its editor. 
