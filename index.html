@@ -4,122 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Allen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: Arial;
+            font-family: Inter;
+        }
+        p, li {
+            color: #1C2233;
+        }
+        h1, h2, h3, h4, h5, b {
+            color: #173050;
         }
         .container {
             padding: 40px;
             width: 1000px;
             max-width: calc(90% - 20px); 
             align: center;
-            <!-- border-width: 1px; -->
-            <!-- border-style: solid; -->
-        } 
-        .top {
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 50px;
+        } 
+        .headshot {
+            display: flex;
+            flex-direction: column;
             flex-wrap: wrap;
             align-items: center;
-            gap: 20px;
-        }
-        .top-text {
-            flex: 1;
-        }
-        .headshot {
-            width: 250px;
-        }
 
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 10px;
+            border-color: #202B4B;
+
+            padding: 5px 20px;
+        }
+        .name {
+            font-size: 20px;
+        }
+        .tagline {
+            font-size: 17px;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+        .pic {
+            max-width: 275px;
+            border-color: #202B4B;
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 10px;
+        }
+        .title {
+            margin-top: 8px;
+            text-align: center;
+        }
+        .education {
+            line-height: 0.4;
+        }
         @media (max-width: 768px) {
-            .top {
+            .container {
                 flex-direction: column;
+                gap: 0px;
             }
-            .top-text .headshot {
-                flex: 1 1 100%;
+            .headshot {
+                border-width: 0px;
+            }
+            .title, .contact {
+                margin: -8px;
+                padding: 0px;
             }
         }
     </style>
 </head>
 <body>
     <div id="main" class="container">
-        <div class="top">
-            <div class="top-text">
-                <h1 class="name">Martin Allen</h1>
-                <h4>
-                    Software Engineer, <a href="https://theijf.org">
-                        The Investigative Journalism Foundation</a>
-                </h4>
+        <div class="headshot">
+            <div class="name">
+                <h1><em>Martin Allen</em></h1>
+            </div>
+            <img src="/me.jpg" alt="Headshot" class="pic">
+            <div class="title">
                 <p>
-                I research civic data and build software that improves it.
+                    <b>Software Engineer</b>,
+                    <em>
+                        <a href="https://theijf.org">The Investigative Journalism Foundation</a>
+                    </em>
                 </p>
+            </div>
+            <div class="contact">
                 <p>
-                    <a href="mailto:martin.tr.allen@gmail.com">martin.tr.allen@gmail.com</a> |
-                    <a href="/martin-allen-cv.pdf">Resume</a> | 
+                    <a href="mailto:martin.tr.allen@gmail.com">Email</a> |
                     <a href="https://github.com/windrim">GitHub</a> |
                     <a href="https://linkedin.com/in/martin-allen-a7820a154">LinkedIn</a>
                 </p>
             </div>
-            <img src="/me.jpg" alt="Headshot" class="headshot">
         </div>
-        <hr>
-        <h3>Work</h3>
-        <p>
-            I am the IJF's primary backend engineer. I'm working on 
-            <a href="https://theijf.org/open-by-default">Open by Default</a>,
-            Canada's largest ever trove of gov't documents; I built the system we 
-            use to process the files we receive daily from more than 150 
-            departments.
-        </p>
-        <p>
-            I also built the system that powers our stores of structured data. 
-            Most recently, we published a 
-            <a href="https://theijf.org/procurement">Procurement</a> database.
-        </p>
-        <p>
-            I assist or lead the fact-finding process for all our databases. The 
-            <a href="https://theijf.org/procurement-introduction">handbook</a> I wrote for
-            that Procurement project summarizes our work well.
-        </p>
-        <p>
-            I work daily with Python, PostgreSQL, Docker/Linux, and AWS. I have
-            special experience in web scraping (e.g. 
-            <a href="https://lobbyist.oico.on.ca/Pages/Public/PublicSearch/">this piece of 
-            work</a>) and in data engineering.
-        </p>
-        <h4>Reporting</h4>
-        <p>
-                I worked at <em>The Western Gazette</em>, Canada's largest student paper, 
-                full time for most my undergrad. After graduation I was its editor. 
-                <a href="https://westerngazette.ca/news/ivey-opened-offshore-foundation-in-2001-but-say-it-was-never-used/article_09b3a360-5cbf-11ea-b624-234316abe055.html">
-                    My investigations
-                </a>
-                were nominated for national awards.
-        </p>
-        <hr>
-        <h3>Education</h3>
-        <ul>
-            <li>
-                    Cert., Computer Coding @ TMU, 2025
-            </li>
-            <ul>
-                <li>
-                        4.1 GPA
-                </li>
-                <li>
-                        Data strucures/algorithms, OS, etc.
-                </li>
-            </ul>
-            <li>
-                    Cert., Data Journalism @ Columbia, 2021
-            </li>
-            <ul>
-                <li>
-                        Data analysis and lots of data viz, esp in D3
-                </li>
-            </ul>
-            <li>
-                    BA Philosophy @ Western University, 2020
-            </li>
-        </ul>
+
+        <div>
+            <h4 class="tagline">
+                I research civic data and build software that improves it.
+            </h4>
+            <p>
+                I am the IJF's primary backend engineer. I'm working on 
+                <a href="https://theijf.org/open-by-default">Open by Default</a>,
+                Canada's largest ever trove of gov't documents; I built the system we 
+                use to process the files we receive daily from more than 150 
+                departments.
+            </p>
+            <p>
+                I also built the system that powers our stores of structured data. 
+                Most recently, we published a 
+                <a href="https://theijf.org/procurement">Procurement</a> database.
+            </p>
+            <p>
+                I assist or lead the fact-finding process for all our databases. The 
+                <a href="https://theijf.org/procurement-introduction">handbook</a> I wrote for
+                that Procurement project summarizes our work well.
+            </p>
+            <h4>Reporting</h4>
+            <p>
+                    I worked at <em>The Western Gazette</em>, Canada's largest student paper, 
+                    full time for most my undergrad. After graduation I was its editor. 
+                    <a href="https://westerngazette.ca/news/ivey-opened-offshore-foundation-in-2001-but-say-it-was-never-used/article_09b3a360-5cbf-11ea-b624-234316abe055.html">
+                        My investigations
+                    </a>
+                    were nominated for national awards.
+            </p>
+            <h3>Education</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><b>2025</b></td>
+                            <td>Cert., Computer Coding</td>
+                            <td><b>@</b> <em>TMU</em></td>
+                        </tr>
+                        <tr>
+                            <td><b>2021</b></td>
+                            <td>Cert., Data Journalism</td>
+                            <td><b>@</b> <em>Columbia</em></td>
+                        </tr>
+                        <tr>
+                            <td><b>2020</b></td>
+                            <td>BA, Philosophy</td>
+                            <td><b>@</b> <em>Western University</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
     </div>
 </body>
 </html>
